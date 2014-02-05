@@ -25,6 +25,7 @@ static CSAnimationType CSAnimationTypeSlideLeft    = @"slideLeft";
 static CSAnimationType CSAnimationTypeSlideRight   = @"slideRight";
 static CSAnimationType CSAnimationTypeSlideDown    = @"slideDown";
 static CSAnimationType CSAnimationTypeSlideUp      = @"slideUp";
+static CSAnimationType CSAnimationTypeSpiralIn     = @"spiralIn";
 static CSAnimationType CSAnimationTypePop          = @"pop";
 static CSAnimationType CSAnimationTypeMorph        = @"morph";
 static CSAnimationType CSAnimationTypeFlash        = @"flash";

@@ -515,3 +515,65 @@ static NSMutableDictionary *_animationClasses;
     }];
 }
 @end
+
+@interface CSSpiralIn : CSAnimation
+@end
+@implementation CSSpiralIn
++ (void)load {
+    [self registerClass:self forAnimationType:CSAnimationTypeSpiralIn];
+}
++ (void)performAnimationOnView:(UIView *)view duration:(NSTimeInterval)duration delay:(NSTimeInterval)delay {
+    // Start
+    view.alpha = 0;
+    view.transform = CGAffineTransformMakeTranslation(0, -40);
+    [UIView animateKeyframesWithDuration:duration/8 delay:delay options:0 animations:^{
+        // End
+        view.alpha = 1 / 8.0;
+        view.transform = CGAffineTransformMakeTranslation(35*0.7071, -35*0.7071);
+    } completion:^(BOOL finished) {
+        [UIView animateKeyframesWithDuration:duration/8 delay:0 options:0 animations:^{
+            // End
+            view.alpha = 2 / 8.0;
+            view.transform = CGAffineTransformMakeTranslation(30, 0);
+        } completion:^(BOOL finished) {
+            [UIView animateKeyframesWithDuration:duration/8 delay:0 options:0 animations:^{
+                // End
+                view.alpha = 3 / 8.0;
+                view.transform = CGAffineTransformMakeTranslation(25*0.7071, 25*0.7071);
+            } completion:^(BOOL finished) {
+                [UIView animateKeyframesWithDuration:duration/8 delay:0 options:0 animations:^{
+                    // End
+                    view.alpha = 4 / 8.0;
+                    view.transform = CGAffineTransformMakeTranslation(0, 20);
+                } completion:^(BOOL finished) {
+                    [UIView animateKeyframesWithDuration:duration/8 delay:0 options:0 animations:^{
+                        // End
+                        view.alpha = 5 / 8.0;
+                        view.transform = CGAffineTransformMakeTranslation(-15*0.7071, 15*0.7071);
+                    } completion:^(BOOL finished) {
+                        [UIView animateKeyframesWithDuration:duration/8 delay:0 options:0 animations:^{
+                            // End
+                            view.alpha = 6 / 8.0;
+                            view.transform = CGAffineTransformMakeTranslation(-10, 0);
+                        } completion:^(BOOL finished) {
+                            [UIView animateKeyframesWithDuration:duration/8 delay:0 options:0 animations:^{
+                                // End
+                                view.alpha = 7 / 8.0;
+                                view.transform = CGAffineTransformMakeTranslation(-5*0.7071, -5*0.7071);
+                            } completion:^(BOOL finished) {
+                                [UIView animateKeyframesWithDuration:duration/8 delay:0 options:0 animations:^{
+                                    // End
+                                    view.alpha = 8 / 8.0;
+                                    view.transform = CGAffineTransformMakeTranslation(0, 0);
+                                } completion:^(BOOL finished) {
+                                    // End
+                                }];
+                            }];
+                        }];
+                    }];
+                }];
+            }];
+        }];
+    }];
+}
+@end
